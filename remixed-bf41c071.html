@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surprise Goku | IT Portfolio</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0a2463;
+      --blue-mid: #1e4dd8;
+      --blue-light: #3d7eff;
+      --red: #e63946;
+      --red-dark: #c1121f;
+      --white: #f8f9ff;
+      --gray: #8892a4;
+      --dark: #060d1f;
+      --card-bg: #0d1b3e;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--dark);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 5%;
+      background: rgba(6, 13, 31, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-logo {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+    }
+
+    .nav-logo span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--gray);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a.active {
+      color: var(--white);
+      border-bottom: 2px solid var(--red);
+      padding-bottom: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 0 5%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 70% 50%, rgba(30, 77, 216, 0.25) 0%, transparent 70%),
+        radial-gradient(ellipse 30% 40% at 80% 80%, rgba(230, 57, 70, 0.15) 0%, transparent 60%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(230, 57, 70, 0.15);
+      border: 1px solid rgba(230, 57, 70, 0.4);
+      color: var(--red);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-name {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3.5rem, 7vw, 6rem);
+      line-height: 0.95;
+      letter-spacing: 2px;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero-name .accent {
+      color: var(--blue-light);
+    }
+
+    .hero-title {
+      color: var(--gray);
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 1.2rem 0 2rem;
+      line-height: 1.6;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--blue-mid);
+      color: white;
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--red);
+      color: var(--red);
+      transform: translateY(-2px);
+    }
+
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-photo-frame {
+      position: relative;
+      width: 380px;
+      height: 420px;
+    }
+
+    .hero-photo-frame::before {
+      content: '';
+      position: absolute;
+      inset: -12px;
+      border: 2px solid var(--blue-mid);
+      border-radius: 16px;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    .hero-photo-frame::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 100px;
+      height: 100px;
+      background: var(--red);
+      border-radius: 4px;
+      z-index: -1;
+      opacity: 0.6;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 12px;
+      filter: contrast(1.05) saturate(0.9);
+    }
+
+    .photo-badge {
+      position: absolute;
+      bottom: -18px;
+      left: 20px;
+      background: var(--blue-mid);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(30, 77, 216, 0.5);
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 0.5;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.02)
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 5%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+
+    .section-title span {
+      color: var(--blue-light);
+    }
+
+    .section-line {
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--blue-light));
+      border-radius: 2px;
+      margin-bottom: 3rem;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text p {
+      color: #b0bcd0;
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: var(--blue-light);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray);
+      font-weight: 500;
+    }
+
+    .about-visual {
+      display: flex;
+      justify-content: center;
+    }
+
+    .about-icon-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .about-icon-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .about-icon-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--blue-mid);
+    }
+
+    .about-icon-card .icon {
+      font-size: 2rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .about-icon-card p {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* EDUCATION */
+    .edu-timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .edu-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--blue-mid), var(--red));
+      border-radius: 2px;
+    }
+
+    .edu-item {
+      position: relative;
+      padding: 1.5rem 0 2.5rem 2rem;
+    }
+
+    .edu-item::before {
+      content: '';
+      position: absolute;
+      left: -2.4rem;
+      top: 1.8rem;
+      width: 14px;
+      height: 14px;
+      background: var(--blue-light);
+      border: 3px solid var(--dark);
+      border-radius: 50%;
+    }
+
+    .edu-year {
+      font-size: 0.75rem;
+      color: var(--red);
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .edu-degree {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .edu-school {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.2s;
+    }
+
+    .skill-card:hover {
+      border-color: var(--blue-mid);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(30, 77, 216, 0.2);
+    }
+
+    .skill-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .skill-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--blue-mid), var(--blue-light));
+    }
+
+    /* EXPERIENCE */
+    .exp-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-left: 4px solid var(--blue-mid);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .exp-role {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-org {
+      color: var(--blue-light);
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .exp-date {
+      color: var(--gray);
+      font-size: 0.85rem;
+      margin-bottom: 1rem;
+    }
+
+    .exp-details {
+      list-style: none;
+    }
+
+    .exp-details li {
+      color: #b0bcd0;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .exp-details li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--red);
+    }
+
+    /* PROJECTS */
+    .proj-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.2s;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(30, 77, 216, 0.25);
+      border-color: var(--blue-mid);
+    }
+
+    .proj-img-placeholder {
+      height: 180px;
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+
+    .proj-body {
+      padding: 1.5rem;
+    }
+
+    .proj-tag {
+      display: inline-block;
+      background: rgba(230, 57, 70, 0.15);
+      border: 1px solid rgba(230, 57, 70, 0.3);
+      color: var(--red);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .proj-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .proj-desc {
+      color: var(--gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      padding: 2rem;
+      transition: all 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--red);
+      transform: translateY(-3px);
+    }
+
+    .service-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-name {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .service-desc {
+      color: var(--gray);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    /* CONTACT */
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .contact-info h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item-icon {
+      width: 42px;
+      height: 42px;
+      background: rgba(30, 77, 216, 0.2);
+      border: 1px solid rgba(30, 77, 216, 0.4);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-text p {
+      color: var(--gray);
+      font-size: 0.8rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .contact-item-text a,
+    .contact-item-text span {
+      color: var(--white);
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .contact-item-text a:hover {
+      color: var(--blue-light);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      color: var(--white);
+      padding: 0.9rem 1.1rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      transition: border-color 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--blue-mid);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--gray);
+    }
+
+    /* FOOTER */
+    footer {
+      background: rgba(6, 13, 31, 0.8);
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 2rem 5%;
+      text-align: center;
+    }
+
+    footer p {
+      color: var(--gray);
+      font-size: 0.88rem;
+    }
+
+    footer span {
+      color: var(--red);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+
+      .hero-grid,
+      .about-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo-frame {
+        width: 280px;
+        height: 320px;
+      }
+
+      .hero-photo-wrap {
+        order: -1;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-logo">SG<span>.</span></div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="navTo('about',this)">About</a></li>
+      <li><a href="#skills" onclick="navTo('skills',this)">Skills</a></li>
+      <li><a href="#experience" onclick="navTo('experience',this)">Experience</a></li>
+      <li><a href="#projects" onclick="navTo('projects',this)">Projects</a></li>
+      <li><a href="#contact" onclick="navTo('contact',this)">Contact</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO -->
+  <section style="padding-top: 0; max-width: 100%; margin: 0;">
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-tag">👨‍💻 Available for Opportunities</div>
+          <h1 class="hero-name">SURPRISE<br><span class="accent">GOKU</span></h1>
+          <p class="hero-title">Final Year IT Student at University of Ghana<br>Aspiring Software &amp; Data
+            Professional passionate about Python, Web Development, and Data Analytics</p>
+          <div class="hero-btns">
+            <button class="btn-primary" onclick="navTo('projects')">View Portfolio</button>
+            <button class="btn-outline" onclick="navTo('contact')">Contact Me</button>
+          </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo-frame">
+            <img src="./pic.jpg" class="hero-photo" 
+            Goku" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-tag">Who I Am</div>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="section-line"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm Surprise Goku, a final-year Information Technology student at the University of Ghana with a deep passion
+          for building meaningful solutions through technology. I thrive at the intersection of software development and
+          data-driven decision-making.</p>
+        <p>My journey in tech has taken me through web development, Python programming, data analytics, and hands-on
+          experience in IT support. I believe in continuous learning and applying knowledge to solve real-world
+          challenges.</p>
+        <p>Outside of coding, I'm dedicated to growing both professionally and personally — always seeking opportunities
+          that push my boundaries.</p>
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num">3+</div>
+            <div class="stat-label">Years Studying IT</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Technical Skills</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">1</div>
+            <div class="stat-label">Internship Completed</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Commitment</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-icon-grid">
+          <div class="about-icon-card">
+            <div class="icon">🐍</div>
+            <p>Python Dev</p>
+          </div>
+          <div class="about-icon-card">
+            <div class="icon">🌐</div>
+            <p>Web Dev</p>
+          </div>
+          <div class="about-icon-card">
+            <div class="icon">📊</div>
+            <p>Data Analytics</p>
+          </div>
+          <div class="about-icon-card">
+            <div class="icon">🔧</div>
+            <p>IT Support</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" style="background: rgba(13,27,62,0.3); max-width:100%; padding: 6rem 5%;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-tag">My Academic Journey</div>
+      <h2 class="section-title">Edu<span>cation</span></h2>
+      <div class="section-line"></div>
+      <div class="edu-timeline">
+        <div class="edu-item">
+          <div class="edu-year">2021 – Present</div>
+          <div class="edu-degree">Bachelor of Science in Information Technology</div>
+          <div class="edu-school">University of Ghana — Final Year Student</div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-year">Completed</div>
+          <div class="edu-degree">West African Senior School Certificate</div>
+          <div class="edu-school">Bishop Herman College</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-tag">What I Know</div>
+    <h2 class="section-title">My <span>Skills</span></h2>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🐍</div>
+        <div class="skill-name">Python Programming</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:80%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🌐</div>
+        <div class="skill-name">Web Development</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:75%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name">Data Analytics</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:70%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📋</div>
+        <div class="skill-name">Microsoft Office Suite</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:90%"></div>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔧</div>
+        <div class="skill-name">IT Support</div>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width:85%"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-tag">Work History</div>
+    <h2 class="section-title">Experi<span>ence</span></h2>
+    <div class="section-line"></div>
+    <div class="exp-card">
+      <div class="exp-role">IT Intern</div>
+      <div class="exp-org">South Tongu Health Directorate</div>
+      <div class="exp-date">Internship</div>
+      <ul class="exp-details">
+        <li>Learned and operated DHIMS (District Health Information Management System) for health data entry and
+          management</li>
+        <li>Strengthened communication skills by collaborating with health professionals and administrative staff</li>
+        <li>Gained hands-on experience in a real-world institutional IT environment</li>
+        <li>Contributed to improving data reliability and record-keeping accuracy within the directorate</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" style="background: rgba(13,27,62,0.3); max-width:100%; padding: 6rem 5%;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-tag">What I've Built</div>
+      <h2 class="section-title">Proj<span>ects</span></h2>
+      <div class="section-line"></div>
+      <div style="max-width:480px;">
+        <div class="proj-card">
+          <div class="proj-img-placeholder">📱</div>
+          <div class="proj-body">
+            <div class="proj-tag">Quality Assurance</div>
+            <div class="proj-name">Barcode & QR Code Scanning App</div>
+            <p class="proj-desc">Served as Quality Assurance Officer — responsible for rigorous testing, quality control
+              processes, and ensuring system reliability across all app functionalities. Played a key role in validating
+              scanning accuracy and performance standards.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-tag">What I Offer</div>
+    <h2 class="section-title">Ser<span>vices</span></h2>
+    <div class="section-line"></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <div class="service-name">Web Development</div>
+        <div class="service-desc">Building clean, responsive, and modern websites and web applications tailored to your
+          needs using current best practices.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <div class="service-name">Data Analysis</div>
+        <div class="service-desc">Transforming raw data into actionable insights using Python and analytical tools to
+          help drive smart decisions.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔧</div>
+        <div class="service-name">IT Support</div>
+        <div class="service-desc">Providing reliable technical assistance, troubleshooting, and system maintenance to
+          keep your operations running smoothly.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background: rgba(13,27,62,0.3); max-width:100%; padding: 6rem 5%;">
+    <div style="max-width:1200px; margin:0 auto;">
+      <div class="section-tag">Let's Talk</div>
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <div class="section-line"></div>
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <h3>Contact Information</h3>
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <div class="contact-item-text">
+              <p>Email</p><a href="mailto:surprisegoku18@gmail.com">surprisegoku18@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div class="contact-item-text">
+              <p>Phone</p><span>0544044531</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💼</div>
+            <div class="contact-item-text">
+              <p>LinkedIn</p><a href="https://www.linkedin.com/in/surprise-goku-9213b1339/"
+                target="_blank">surprise-goku-9213b1339</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🐙</div>
+            <div class="contact-item-text">
+              <p>GitHub</p><a href="https://github.com/Gokurise" target="_blank">Gokurise</a>
+            </div>
+          </div>
+        </div>
+        <div>
+          <form class="contact-form" id="contactForm" onsubmit="return handleSubmit(event);">
+            <div class="form-row">
+              <div class="form-group"><input id="f-name" type="text" placeholder="Your Name"></div>
+              <div class="form-group"><input id="f-email" type="email" placeholder="Your Email"></div>
+            </div>
+            <div class="form-group"><input id="f-subject" type="text" placeholder="Subject"></div>
+            <div class="form-group"><textarea id="f-msg" placeholder="Your Message..."></textarea></div>
+            <div id="form-feedback"
+              style="display:none;padding:0.8rem 1rem;border-radius:8px;font-size:0.9rem;margin-bottom:0.5rem;"></div>
+            <button id="submitBtn" type="submit" class="btn-primary"
+              style="width:100%;font-size:0.95rem;padding:1rem;">Send Message →</button>
+          </form>
+          <script>
+            function handleSubmit(e) {
+              e.preventDefault();
+              const name = document.getElementById('f-name').value.trim();
+              const email = document.getElementById('f-email').value.trim();
+              const subject = document.getElementById('f-subject').value.trim();
+              const msg = document.getElementById('f-msg').value.trim();
+              const fb = document.getElementById('form-feedback');
+              const btn = document.getElementById('submitBtn');
+
+              if (!name || !email || !subject || !msg) {
+                fb.style.display = 'block';
+                fb.style.background = 'rgba(230,57,70,0.15)';
+                fb.style.border = '1px solid rgba(230,57,70,0.4)';
+                fb.style.color = '#e63946';
+                fb.textContent = '⚠️ Please fill in all fields before sending.';
+                return false;
+              }
+              const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              if (!emailRe.test(email)) {
+                fb.style.display = 'block';
+                fb.style.background = 'rgba(230,57,70,0.15)';
+                fb.style.border = '1px solid rgba(230,57,70,0.4)';
+                fb.style.color = '#e63946';
+                fb.textContent = '⚠️ Please enter a valid email address.';
+                return false;
+              }
+
+              btn.textContent = 'Sending...';
+              btn.disabled = true;
+              btn.style.opacity = '0.7';
+
+              setTimeout(() => {
+                fb.style.display = 'block';
+                fb.style.background = 'rgba(61,126,255,0.15)';
+                fb.style.border = '1px solid rgba(61,126,255,0.4)';
+                fb.style.color = '#3d7eff';
+                fb.textContent = '✅ Message sent! Surprise will get back to you soon.';
+                btn.textContent = 'Message Sent ✓';
+                btn.style.background = '#1e4dd8';
+                document.getElementById('f-name').value = '';
+                document.getElementById('f-email').value = '';
+                document.getElementById('f-subject').value = '';
+                document.getElementById('f-msg').value = '';
+                setTimeout(() => { btn.textContent = 'Send Message →'; btn.disabled = false; btn.style.opacity = '1'; btn.style.background = ''; }, 4000);
+              }, 1200);
+              return false;
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function navTo(id, linkEl) {
+      const target = document.getElementById(id);
+      if (!target) return;
+      const offset = 70;
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+      // Update active state
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      if (linkEl) { linkEl.classList.add('active'); }
+      else {
+        const match = document.querySelector(`.nav-links a[href="#${id}"]`);
+        if (match) match.classList.add('active');
+      }
+    }
+
+    // Highlight nav link on scroll
+    window.addEventListener('scroll', () => {
+      const sections = ['about', 'skills', 'experience', 'projects', 'contact'];
+      let current = '';
+      sections.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && window.scrollY >= el.offsetTop - 120) current = id;
+      });
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    });
+  </script>
+  <footer>
+    <p>© 2026 <span>Surprise Goku</span> · Built with passion in Accra, Ghana</p>
+  </footer>
+
+</body>
+
+</html>
