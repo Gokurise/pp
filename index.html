@@ -359,41 +359,6 @@
       font-weight: 500;
     }
 
-    .about-visual {
-      display: flex;
-      justify-content: center;
-    }
-
-    .about-icon-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .about-icon-card {
-      background: var(--card-bg);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      border-radius: 12px;
-      padding: 1.5rem;
-      text-align: center;
-      transition: transform 0.2s, border-color 0.2s;
-    }
-
-    .about-icon-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--blue-mid);
-    }
-
-    .about-icon-card .icon {
-      font-size: 2rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .about-icon-card p {
-      font-size: 0.85rem;
-      color: var(--gray);
-    }
-
     /* EDUCATION */
     .edu-timeline {
       position: relative;
@@ -469,11 +434,6 @@
       box-shadow: 0 8px 30px rgba(30, 77, 216, 0.2);
     }
 
-    .skill-icon {
-      font-size: 1.8rem;
-      margin-bottom: 0.8rem;
-    }
-
     .skill-name {
       font-weight: 700;
       font-size: 0.95rem;
@@ -528,15 +488,6 @@
       color: #b0bcd0;
       font-size: 0.95rem;
       line-height: 1.7;
-      padding-left: 1.2rem;
-      position: relative;
-    }
-
-    .exp-details li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--red);
     }
 
     /* PROJECTS */
@@ -552,15 +503,6 @@
       transform: translateY(-4px);
       box-shadow: 0 12px 40px rgba(30, 77, 216, 0.25);
       border-color: var(--blue-mid);
-    }
-
-    .proj-img-placeholder {
-      height: 180px;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
     }
 
     .proj-body {
@@ -611,11 +553,6 @@
       transform: translateY(-3px);
     }
 
-    .service-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
     .service-name {
       font-weight: 700;
       font-size: 1rem;
@@ -642,23 +579,7 @@
     }
 
     .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
       margin-bottom: 1.5rem;
-    }
-
-    .contact-item-icon {
-      width: 42px;
-      height: 42px;
-      background: rgba(30, 77, 216, 0.2);
-      border: 1px solid rgba(30, 77, 216, 0.4);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      flex-shrink: 0;
     }
 
     .contact-item-text p {
@@ -785,7 +706,7 @@
     <div class="hero">
       <div class="hero-grid">
         <div class="hero-text">
-          <div class="hero-tag">👨‍💻 Available for Opportunities</div>
+          <div class="hero-tag">Available for Opportunities</div>
           <h1 class="hero-name">SURPRISE<br><span class="accent">GOKU</span></h1>
           <p class="hero-title">Final Year IT Student at University of Ghana<br>Aspiring Software &amp; Data
             Professional passionate about Python, Web Development, and Data Analytics</p>
@@ -838,26 +759,6 @@
           </div>
         </div>
       </div>
-      <div class="about-visual">
-        <div class="about-icon-grid">
-          <div class="about-icon-card">
-            <div class="icon"></div>
-            <p>Python Dev</p>
-          </div>
-          <div class="about-icon-card">
-            <div class="icon"></div>
-            <p>Web Dev</p>
-          </div>
-          <div class="about-icon-card">
-            <div class="icon"></div>
-            <p>Data Analytics</p>
-          </div>
-          <div class="about-icon-card">
-            <div class="icon"></div>
-            <p>IT Support</p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -889,35 +790,30 @@
     <div class="section-line"></div>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="skill-icon"></div>
         <div class="skill-name">Python Programming</div>
         <div class="skill-bar">
           <div class="skill-fill" style="width:80%"></div>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"></div>
         <div class="skill-name">Web Development</div>
         <div class="skill-bar">
           <div class="skill-fill" style="width:75%"></div>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"></div>
         <div class="skill-name">Data Analytics</div>
         <div class="skill-bar">
           <div class="skill-fill" style="width:70%"></div>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"></div>
         <div class="skill-name">Microsoft Office Suite</div>
         <div class="skill-bar">
           <div class="skill-fill" style="width:90%"></div>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon"></div>
         <div class="skill-name">IT Support</div>
         <div class="skill-bar">
           <div class="skill-fill" style="width:85%"></div>
@@ -953,7 +849,6 @@
       <div class="section-line"></div>
       <div style="max-width:480px;">
         <div class="proj-card">
-          <div class="proj-img-placeholder">📱</div>
           <div class="proj-body">
             <div class="proj-tag">Quality Assurance</div>
             <div class="proj-name">Barcode & QR Code Scanning App</div>
@@ -973,19 +868,16 @@
     <div class="section-line"></div>
     <div class="services-grid">
       <div class="service-card">
-        <div class="service-icon">🌐</div>
         <div class="service-name">Web Development</div>
         <div class="service-desc">Building clean, responsive, and modern websites and web applications tailored to your
           needs using current best practices.</div>
       </div>
       <div class="service-card">
-        <div class="service-icon">📊</div>
         <div class="service-name">Data Analysis</div>
         <div class="service-desc">Transforming raw data into actionable insights using Python and analytical tools to
           help drive smart decisions.</div>
       </div>
       <div class="service-card">
-        <div class="service-icon">🔧</div>
         <div class="service-name">IT Support</div>
         <div class="service-desc">Providing reliable technical assistance, troubleshooting, and system maintenance to
           keep your operations running smoothly.</div>
@@ -1003,26 +895,22 @@
         <div class="contact-info">
           <h3>Contact Information</h3>
           <div class="contact-item">
-            <div class="contact-item-icon">📧</div>
             <div class="contact-item-text">
               <p>Email</p><a href="mailto:surprisegoku18@gmail.com">surprisegoku18@gmail.com</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon"></div>
             <div class="contact-item-text">
               <p>Phone</p><span>0544044531</span>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon"></div>
             <div class="contact-item-text">
               <p>LinkedIn</p><a href="https://www.linkedin.com/in/surprise-goku-9213b1339/"
                 target="_blank">surprise-goku-9213b1339</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-item-icon"></div>
             <div class="contact-item-text">
               <p>GitHub</p><a href="https://github.com/Gokurise" target="_blank">Gokurise</a>
             </div>
@@ -1039,7 +927,7 @@
             <div id="form-feedback"
               style="display:none;padding:0.8rem 1rem;border-radius:8px;font-size:0.9rem;margin-bottom:0.5rem;"></div>
             <button id="submitBtn" type="submit" class="btn-primary"
-              style="width:100%;font-size:0.95rem;padding:1rem;">Send Message →</button>
+              style="width:100%;font-size:0.95rem;padding:1rem;">Send Message</button>
           </form>
           <script>
             function handleSubmit(e) {
@@ -1056,7 +944,7 @@
                 fb.style.background = 'rgba(230,57,70,0.15)';
                 fb.style.border = '1px solid rgba(230,57,70,0.4)';
                 fb.style.color = '#e63946';
-                fb.textContent = '⚠️ Please fill in all fields before sending.';
+                fb.textContent = 'Please fill in all fields before sending.';
                 return false;
               }
               const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -1065,7 +953,7 @@
                 fb.style.background = 'rgba(230,57,70,0.15)';
                 fb.style.border = '1px solid rgba(230,57,70,0.4)';
                 fb.style.color = '#e63946';
-                fb.textContent = '⚠️ Please enter a valid email address.';
+                fb.textContent = 'Please enter a valid email address.';
                 return false;
               }
 
@@ -1078,14 +966,14 @@
                 fb.style.background = 'rgba(61,126,255,0.15)';
                 fb.style.border = '1px solid rgba(61,126,255,0.4)';
                 fb.style.color = '#3d7eff';
-                fb.textContent = '✅ Message sent! Surprise will get back to you soon.';
-                btn.textContent = 'Message Sent ✓';
+                fb.textContent = 'Message sent! Surprise will get back to you soon.';
+                btn.textContent = 'Message Sent';
                 btn.style.background = '#1e4dd8';
                 document.getElementById('f-name').value = '';
                 document.getElementById('f-email').value = '';
                 document.getElementById('f-subject').value = '';
                 document.getElementById('f-msg').value = '';
-                setTimeout(() => { btn.textContent = 'Send Message →'; btn.disabled = false; btn.style.opacity = '1'; btn.style.background = ''; }, 4000);
+                setTimeout(() => { btn.textContent = 'Send Message'; btn.disabled = false; btn.style.opacity = '1'; btn.style.background = ''; }, 4000);
               }, 1200);
               return false;
             }
